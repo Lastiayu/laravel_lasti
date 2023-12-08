@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Sponsor extends Model
 {
     use HasFactory;
-    protected $fillable = ['logo', 'nama', 'alamat', 'email', 'no_hp', 'nama_acara', 'kategori', 'feedback', 'S&K'];
+    protected $fillable = ['logo', 'nama', 'alamat', 'email', 'no_hp', 'nama_acara', 'kategori', 'feedback', 'SnK'];
 }

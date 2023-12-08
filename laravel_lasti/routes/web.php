@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\SponsorController;
+// use App\Http\Controllers\SponsorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,12 @@ Route::get('/', function () {
     return view('template/master');
 });
 
+// Route::get('/sponsor', function () {
+//     return view('sponsor/index');
+// });
+
+// Route::get('/sponsor', [SponsorController::class, 'index']);
+// Route::get('/sponsor', [SponsorController::class, 'create']);
 Route::resource('sponsor', SponsorController::class);
+Route::resource('/sponsor/detail/{id}', [SponsorController::class, 'detail'])->name('detail');
+Route::resource('user', UserController::class);

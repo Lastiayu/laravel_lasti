@@ -9,7 +9,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
     @yield('css')
 
 </head>
@@ -22,7 +22,8 @@
     <div id="preloader">
         <div class="loader">
             <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3"
+                    stroke-miterlimit="10" />
             </svg>
         </div>
     </div>
@@ -34,7 +35,7 @@
     <!--**********************************
         Main wrapper start
     ***********************************-->
-    @yield('content')
+
     <div id="main-wrapper">
 
         <!--**********************************
@@ -255,6 +256,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
+
         <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
@@ -266,7 +268,7 @@
                     </li>
                     <li class="nav-label">Data</li>
                     <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow" href="{{ route('sponsor.index') }}" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Data Sponsorship</span>
                         </a>
                     </li>
@@ -311,8 +313,9 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
 
+        <div class="content-body">
+            @yield('content')
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
@@ -352,11 +355,17 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="plugins/common/common.min.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/gleek.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+    <script src="{{ url('plugins/common/common.min.js') }}"></script>
+    <script src="{{ url('js/custom.min.js') }}"></script>
+    <script src="{{ url('js/settings.js') }}"></script>
+    <script src="{{ url('js/gleek.js') }}"></script>
+    <script src="{{ url('js/styleSwitcher.js') }}"></script>
+    <script>
+        $(" .custom-file-input").on("change", function() {
+            var filename = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
     @yield('js')
 
 </body>
