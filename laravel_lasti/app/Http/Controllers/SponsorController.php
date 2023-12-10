@@ -140,10 +140,8 @@ class SponsorController extends Controller
     }
     public function detail($id)
     {
-        $sponsor = array(
-            'sponsor_detail' => User::find($id)
-        );
+            $sponsor = Sponsor::find($id);
 
-        return view('sponsor.detail');
+        return view('sponsor.detail', compact('sponsor'));
     }
 }

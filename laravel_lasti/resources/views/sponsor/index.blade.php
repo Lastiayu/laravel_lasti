@@ -2,14 +2,11 @@
 @section('css')
     <!-- DataTables -->
 
-    <link rel="stylesheet" href="{{ url('plugins/datatables-
-        bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 
-    <link rel="stylesheet" href="{{ url('plugins/datatables-
-        responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 
-    <link rel="stylesheet" href="{{ url('plugins/datatables-
-        buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endsection
 @section('content')
     @if (session()->has('success'))
@@ -23,8 +20,7 @@
         </div>
         <div class="card-body">
 
-            <a href="{{ route('sponsor.create') }}"><button type="submit" class="btn btn-
-primary"><i
+            <a href="{{ route('sponsor.create') }}"><button type="submit" class="btn btn-primary"><i
                         class="fa fa-plus"></i> Tambah</button></a>
 
             <table id="example1" class="table table-bordered table-striped">
@@ -49,20 +45,19 @@ primary"><i
                             <td>{{ $data->kategori }}</td>
                             <td>
                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                    action="{{ route('sponsor.destroy', $data->id) }}" method="POST">
-
+                                    action="{{ route('sponsor.destroy', $data->id) }}" method="POST"
+                                    style="display: inline;">
                                     @csrf
-
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-outline-danger"><i
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i
                                             class="fa fa-trash"></i></button>
-
                                 </form>
-                                &nbsp;
 
-                                <a href="{{ route('sponsor.edit', $data->id) }}" class="btn btn-outline-warning"><i class="fa fa-edit"></i></a>
-                                <a href="{{ route('sponsor.detail', $data->id) }}" class="btn btn-outline-warning"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('sponsor.edit', $data->id) }}" class="btn btn-outline-warning btn-sm"><i
+                                        class="fa fa-edit"></i>Edit</a>
 
+                                <a href="{{ route('sponsor.detail', $data->id) }}"
+                                    class="btn btn-outline-success btn-sm"><i class="fa fa-info-circle"></i>Detail</a>
 
                             </td>
                         </tr>
@@ -77,8 +72,10 @@ primary"><i
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
-    <script src="{{ url('plugins/datatables-
-        responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script
+        src="{{ url('plugins/datatables-
+                                                        responsive/js/dataTables.responsive.min.js') }}">
+    </script>
 
     <script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.j') }}s"></script>
     <script src="{{ url('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>

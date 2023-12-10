@@ -13,7 +13,9 @@
         </div>
         <div class="card-body">
             <div class="card-body">
-                <h2 class="card-title"><?= $sponsor['logo'] ?> </h2>
+                <img src="{{ Storage::url('sponsor/' . $sponsor['logo']) }}" style="width:150px" class="img-thumbnail">
+                <br>
+                <br>
                 <h6 class="card-subtitle mb-2 text-muted"><?= $sponsor['nama'] ?> </h6>
                 <div class="row">
                     <div class="col-md-4">Alamat</div>
